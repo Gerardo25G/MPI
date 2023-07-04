@@ -106,6 +106,7 @@ $ sudo mount master:/home/mpi/MPI /home/mpi/MPI
 Ejecutamos la siguiente línea de código para ver si tenemos comunicación entre nuestras máquinas
 ```
 $ mpiexec -hostfile hosts python ejemplo.py
+$ mpirun -hostfile hosts python ejemplo.py
 ```
 
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/60c059b1-fe96-4ee7-bbf6-17e3ec4c3c02"/></p> 
