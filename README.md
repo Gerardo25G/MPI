@@ -1,29 +1,29 @@
 # MPI
-Comunicacion entre dos máquinas median mpiexec
+Comunicación entre dos máquinas median mpiexec
 ## Tabla de contenidos:
 ---
 - [Empezamos](#empezamos)
 - [Instalaciones necesarias](#instalaciones-necesarias)
 - [Para ejecutar codigo python y mpiexec](#para-ejecutar-codigo-python-y-mpiexec)
 - [Configuraciones Generales y clave ssh](#configuraciones-generales-y-clave-ssh) 
-- [Configuración maquina Master](#configuración-maquina-master)
-- [Configuración maquinas Clientes](#configuración-maquinas-clientes)
+- [Configuración máquina Master](#configuración-maquina-master)
+- [Configuración máquina Clientes](#configuración-maquinas-clientes)
 - [Pruebas](#pruebas)
 - [Ejemplo de python](#ejemplo-de-python)
 
 ## Empezamos
-Para la comunicación entre las maquinas deben tener un mismo usuario
+Para la comunicación entre las máquinas deben tener un mismo usuario
 
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/84022712-563d-4641-9bef-244832fa31d1"/></p> 
 
 - Opcional
-Si deseamos cambiar el nombre de nuestro host lo podemos hacer y una vez cambiado debemos reiniciar nuestra maquina
+Si deseamos cambiar el nombre de nuestro host lo podemos hacer y una vez cambiado debemos reiniciar nuestra máquina
 ```
 $hostnamectl set-hostname master
 ``` 
 
 ## Instalaciones necesarias 
-En cada maquina que vamos a ocupar necesitamos tener instalado lo siguiente 
+En cada máquina que vamos a ocupar necesitamos tener instalado lo siguiente 
 ```
 $ sudo apt-get update
 $ sudo apt install net-tools openmpi-bin openmpi-common libopenmpi-dev openssh-client openssh-server nfs-kernel-server
@@ -39,7 +39,7 @@ $ pip install mpi4py
 ```
 $ sudo nano /etc/hosts
 ```
-Agregamos las ip de nuestras maquinas como se muestra en la siguiente imagen
+Agregamos las ip de nuestras máquinas como se muestra en la siguiente imagen
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/14f95487-8517-4284-97cc-9523f6aad8f3"/></p> 
 
 - Crear directorio oculto para crear llaves de ssh
@@ -56,7 +56,7 @@ $ cp id_rsa.pub authorized_keys
 ```
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/0cc28332-abf8-4f1a-9d3f-1a273fb3f474"/></p> 
 
-- Pasar llave a los clientes(contraseña de maquina client) 
+- Pasar llave a los clientes(contraseña de máquina client) 
 ```
 $ ssh-copy-id client1
 $ ssh-copy-id client2
@@ -65,7 +65,7 @@ $ ssh-copy-id client2
 ```
 $ sudo nano /etc/ssh/sshd_config
 ```
-La configuracion debe estar el PubKeyAuthentication y RSAAuthentication en yes
+La configuración debe estar el PubKeyAuthentication y RSAAuthentication en yes
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/aa04f70f-bf2b-4d37-8f5a-c521e9493c69"/></p> 
 
 - Reiniciar ssh
@@ -73,7 +73,7 @@ La configuracion debe estar el PubKeyAuthentication y RSAAuthentication en yes
 $ sudo service ssh restart
 ```
 
-## Configuración maquina Master
+## Configuración máquina Master
 - Creamos una carpeta
 ```
 $ mkdir MPI
@@ -92,18 +92,18 @@ $ sudo systemctl restart nfs-kernel-server
 $ sudo systemctl enable nfs-kernel-server
 ```
 
-## Configuración maquinas Clientes
+## Configuración máquinas Clientes
 - Creamos una carpeta
 ```
 $ mkdir MPI
 ```
-- Montamos la carpeta MPI de nuestra maquina master
+- Montamos la carpeta MPI de nuestra máquina master
 ```
 $ sudo mount master:/home/mpi/MPI /home/mpi/MPI
 ```
 
 ## Pruebas 
-Ejecutamos la siguiente línea de código para ver si tenemos comunicación entre nuestras maquinas
+Ejecutamos la siguiente línea de código para ver si tenemos comunicación entre nuestras máquinas
 ```
 $ mpiexec -hostfile hosts python ejemplo.py
 ```
