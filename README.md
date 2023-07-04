@@ -12,7 +12,7 @@ Comunicación entre dos máquinas median mpiexec
 - [Ejemplo de python](#ejemplo-de-python)
 
 ## Empezamos
-Para la comunicación entre las máquinas deben tener un mismo usuario
+Para la comunicación entre las máquinas deben tener un mismo usuario, para las instalaciones dependeria de la version de linux en este caso se realizo en la version 18.04 por eso se usa el "python"en el caso de que la version sea mayor se debera usar "python3"
 
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/84022712-563d-4641-9bef-244832fa31d1"/></p> 
 
