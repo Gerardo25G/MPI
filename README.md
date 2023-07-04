@@ -5,7 +5,7 @@ Comunicacion entre dos máquinas median mpiexec
 
 - [Badges o escudos](#badges-o-escudos)
 - [Descripción y contexto](#descripción-y-contexto)
-- [Guía de usuario](#guía-de-usuario)
+- [Ejemplo de python](#ejemplo-de-python)
 
 ## Empezamos
 Para la comunicación entre las maquinas deben tener un mismo usuario
