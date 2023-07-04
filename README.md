@@ -42,7 +42,7 @@ $ sudo nano /etc/hosts
 Agregamos las ip de nuestras máquinas como se muestra en la siguiente imagen
 <p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/14f95487-8517-4284-97cc-9523f6aad8f3"/></p> 
 
-- Crear directorio oculto para crear llaves de ssh
+- Crear directorio oculto para generar llaves de ssh
 ```
 $ mkdir ~/.ssh
 ```
