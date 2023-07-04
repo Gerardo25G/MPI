@@ -2,13 +2,13 @@
 Comunicacion entre dos máquinas median mpiexec
 ## Tabla de contenidos:
 ---
-- [Empezamos](#badges-o-escudos)
-- [Instalaciones necesarias]
-- [Para ejecutar codigo python y mpiexec]
-- [Configuraciones Generales y clave ssh]  
-- [Configuración maquina Master](#descripción-y-contexto)
-- [Configuración maquinas Clientes](#descripción-y-contexto)
-- [Pruebas]
+- [Empezamos](#empezamos)
+- [Instalaciones necesarias](#instalaciones-necesarias)
+- [Para ejecutar codigo python y mpiexec](#para-ejecutar-codigo-python-y-mpiexec)
+- [Configuraciones Generales y clave ssh](#configuraciones-generales-y-clave-ssh) 
+- [Configuración maquina Master](#configuración-maquina-master)
+- [Configuración maquinas Clientes](#configuración-maquinas-clientes)
+- [Pruebas](#pruebas)
 - [Ejemplo de python](#ejemplo-de-python)
 
 ## Empezamos
@@ -34,7 +34,7 @@ Tenemos que tener instalado lo siguiente
 $ sudo apt-get install python-pip
 $ pip install mpi4py
 ```
-#Configuraciones Generales y clave ssh
+## Configuraciones Generales y clave ssh
 - En todas la maquinas necesitamos editar el archivo host y agregar una maquina Master y los Clientes que sean necesarios
 ```
 $ sudo nano /etc/hosts
@@ -50,10 +50,12 @@ $ mkdir ~/.ssh
 ```
 $ ssh-keygen -t rsa
 ```
-- Copiar de respaldo
+- Copia de respaldo
 ```
 $ cp id_rsa.pub authorized_keys
 ```
+<p align="center"><img src="https://github.com/Gerardo25G/MPI/assets/49174524/0cc28332-abf8-4f1a-9d3f-1a273fb3f474"/></p> 
+
 - Pasar llave a los clientes(contraseña de maquina client) 
 ```
 $ ssh-copy-id client1
